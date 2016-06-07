@@ -1,0 +1,544 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="FunctionParameterNoIdentifierTable">
+    <Row>
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+%s foo(%s) 
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+%s fn_0_0(%s anonarg_0)
+{
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s foo(%s)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+%s fn_0_0(%s anonarg_0)
+{
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="With 'in' qualifier">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+%s foo(in %s) 
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+%s fn_0_0(%s anonarg_0)
+{
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s foo(in %s)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+%s fn_0_0(%s anonarg_0)
+{
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="FunctionParametersNoIdentifierTable">
+    <Row>
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+%s foo(%s, %s) 
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+%s fn_0_0(%s anonarg_0, %s anonarg_1)
+{
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s foo(%s, %s)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+%s fn_0_0(%s anonarg_0, %s anonarg_1)
+{
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="With 'in' qualifier">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+%s foo(in %s, %s) 
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+%s fn_0_0(%s anonarg_0, %s anonarg_1)
+{
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s foo(in %s, %s)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+%s fn_0_0(%s anonarg_0, %s anonarg_1)
+{
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="FunctionParameterWithIdentifierTable">
+    <Row>
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+%s foo(%s bar)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+%s fn_0_0(%s var_1_1)
+{
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s foo(%s bar)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+%s fn_0_0(%s var_1_1)
+{
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="With 'in' qualifier">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+%s foo(in %s bar)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+%s fn_0_0(%s var_1_1)
+{
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s foo(in %s bar)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+%s fn_0_0(%s var_1_1)
+{
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="FunctionParameterWithMultipleIdentifiersTable">
+    <Row>
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+%s foo(%s bar, %s baz)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+%s fn_0_0(%s var_1_1, %s var_1_2)
+{
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s foo(%s bar, %s baz)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+%s fn_0_0(%s var_1_1, %s var_1_2)
+{
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="With 'in' qualifier">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+%s foo(in %s bar, %s baz)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+%s fn_0_0(%s var_1_1, %s var_1_2)
+{
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s foo(in %s bar, %s baz)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+%s fn_0_0(%s var_1_1, %s var_1_2)
+{
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="InvalidFunctionDataSource">
+    <Row Description="Ensure multiple function parameter qualifiers are not supported beginning with 'in' (ex. 'int foo(in inout bar);">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+%s foo(in in %s bar, in out %s baz, in inout %s blah)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s foo(in in %s bar, in out %s baz, in inout %s blah)
+{ 
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure multiple function parameter qualifiers are not supported beginning with 'in' (ex. 'int foo(in inout bar);">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+%s foo(out in %s bar, out out %s baz, out inout %s blah)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s foo(out in %s bar, out out %s baz, out inout %s blah)
+{ 
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure multiple function parameter qualifiers are not supported beginning with 'in' (ex. 'int foo(in inout bar);">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+%s foo(out in %s bar, out out %s baz, out inout %s blah)
+{ 
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s foo(inout in %s bar, inout out %s baz, inout inout %s blah)
+{ 
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure function definitions cannot be nested (void params)">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+%s foo(void)
+{
+  %s bar(void)
+  { 
+  }
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s foo(void)
+{
+  %s bar(void)
+  {
+  }
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure function definitions cannot be nested (nonvoid params)">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+%s foo(%s baz)
+{ 
+  %s bar(%s baz)
+  {
+  }
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s foo(%s baz)
+{ 
+  %s bar(%s baz)
+  { 
+  }
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure that main must return 'void'">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+%s main(void){
+  gl_FragColor = vec4(%s, %s, %s, %s);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s main(void){
+  gl_Position = vec4(%s, %s, %s, %s);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure that main must have 'void' parameters">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+void main(%s foo){
+  gl_FragColor = vec4(%s, %s, %s, %s);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main(%s foo){
+  gl_Position = vec4(%s, %s, %s, %s);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+</Data>

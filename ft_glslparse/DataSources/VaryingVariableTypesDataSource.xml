@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="TypeTable">
+    <Row>
+      <Parameter Name="TypeGLSL">float</Parameter>
+      <Parameter Name="TypeHLSL">float</Parameter>
+      <Parameter Name="InitializerGLSL">1.000000e+000</Parameter>
+      <Parameter Name="InitializerHLSL">1.000000e+000</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">vec2</Parameter>
+      <Parameter Name="TypeHLSL">float2</Parameter>
+      <Parameter Name="InitializerGLSL">vec2(1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float2(1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">vec3</Parameter>
+      <Parameter Name="TypeHLSL">float3</Parameter>
+      <Parameter Name="InitializerGLSL">vec3(1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float3(1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">vec4</Parameter>
+      <Parameter Name="TypeHLSL">float4</Parameter>
+      <Parameter Name="InitializerGLSL">vec4(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float4(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">mat2</Parameter>
+      <Parameter Name="TypeHLSL">float2x2</Parameter>
+      <Parameter Name="InitializerGLSL">mat2(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float2x2(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">mat3</Parameter>
+      <Parameter Name="TypeHLSL">float3x3</Parameter>
+      <Parameter Name="InitializerGLSL">mat3(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float3x3(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">mat4</Parameter>
+      <Parameter Name="TypeHLSL">float4x4</Parameter>
+      <Parameter Name="InitializerGLSL">mat4(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float4x4(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+  </Table>
+</Data>

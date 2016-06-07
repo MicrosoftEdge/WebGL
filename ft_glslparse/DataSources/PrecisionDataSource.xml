@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="Qualifiers">
+    <Row>
+      <Parameter Name="Qualifier">lowp</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="Qualifier">mediump</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="Qualifier">highp</Parameter>
+    </Row>
+  </Table>
+  <Table Id="Scenarios">
+    <Row Description="Basic global float precision qualifier">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision %s float;
+void main()
+{
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+precision %s float;
+void main()
+{
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Basic global int precision qualifier">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision %s int;
+void main()
+{
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+precision %s int;
+
+void main()
+{
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+</Data>

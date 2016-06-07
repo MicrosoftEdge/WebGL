@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="LessonOneTable">
+    <Row>
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main(void) {
+    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+    float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+    float4 position : SV_Position;
+};
+
+void main(in PSInput input, out PSOutput psOutput)
+{
+    psOutput.fragColor[0]=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+attribute vec3 aVertexPosition;
+
+uniform mat4 uMVMatrix;
+uniform mat4 uPMatrix;
+
+void main(void) {
+    gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+    float3 var_0_0:var_0_0;
+};
+
+struct PSInput
+{
+    float4 position : SV_Position;
+};
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+</Data>

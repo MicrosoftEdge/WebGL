@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="BasicVaryingTable">
+    <Row>
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+varying %s foo;
+
+void main()
+{
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+varying %s foo;
+
+void main()
+{
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  %s vary_0:vary_0_sem;
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  flippedPosition=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+varying %s foo[1];
+
+void main()
+{
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+varying %s foo[1];
+
+void main()
+{
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  %s vary_0[1]:vary_0_sem;
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  flippedPosition=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+</Data>

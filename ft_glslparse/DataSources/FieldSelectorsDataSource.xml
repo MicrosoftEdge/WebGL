@@ -1,0 +1,3264 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="Programs">
+    <Row>
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+precision mediump float;
+void main()
+{
+  %s
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %s
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %s
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %s
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="singleRValues">
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec2 rValue;
+
+lValue = rValue.x;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_0 = var_1_1.x;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec2 rValue;
+
+lValue = rValue.y;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_0 = var_1_1.y;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec2 rValue;
+
+lValue = rValue.r;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_0 = var_1_1.x;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec2 rValue;
+
+lValue = rValue.g;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_0 = var_1_1.y;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec2 rValue;
+
+lValue = rValue.s;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_0 = var_1_1.x;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec2 rValue;
+
+lValue = rValue.t;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_0 = var_1_1.y;
+]]>
+      </Parameter>
+    </Row>
+    
+    
+    
+    
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+lValue = rValue.x;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.x;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+lValue = rValue.y;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.y;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+lValue = rValue.z;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.z;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+lValue = rValue.r;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.x;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+lValue = rValue.g;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.y;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+lValue = rValue.b;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.z;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+lValue = rValue.s;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.x;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+lValue = rValue.t;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.y;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+lValue = rValue.p;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.z;
+]]>
+      </Parameter>
+    </Row>
+    
+    
+    
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+lValue = rValue.x;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.x;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+lValue = rValue.y;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.y;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+lValue = rValue.z;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.z;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+lValue = rValue.w;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.w;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+lValue = rValue.r;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.x;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+lValue = rValue.g;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.y;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+lValue = rValue.b;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.z;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+lValue = rValue.a;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.w;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+lValue = rValue.s;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.x;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+lValue = rValue.t;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.y;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+lValue = rValue.p;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.z;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+lValue = rValue.q;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.w;
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="singleLValues">
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec2 rValue;
+
+rValue.x = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_1.x = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec2 rValue;
+
+rValue.y = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_1.y = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec2 rValue;
+
+rValue.r = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_1.x = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec2 rValue;
+
+rValue.g = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_1.y = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec2 rValue;
+
+rValue.s = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_1.x = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec2 rValue;
+
+rValue.t = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_1.y = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+rValue.x = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.x = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+rValue.y = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.y = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+rValue.z = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.z = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+rValue.r = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.x = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+rValue.g = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.y = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+rValue.b = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.z = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+rValue.s = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.x = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+rValue.t = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.y = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec3 rValue;
+
+rValue.p = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.z = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    
+    
+    
+    
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+rValue.x = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.x = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+rValue.y = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.y = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+rValue.z = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.z = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+rValue.w = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.w = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+rValue.r = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.x = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+rValue.g = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.y = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+rValue.b = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.z = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+rValue.a = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.w = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+rValue.s = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.x = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+rValue.t = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.y = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+rValue.p = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.z = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+float lValue;
+vec4 rValue;
+
+rValue.q = lValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.w = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="doubleRValues">
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec2 rValue;
+
+lValue = rValue.xx;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_0 = var_1_1.xx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec2 rValue;
+
+lValue = rValue.yy;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_0 = var_1_1.yy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec3 rValue;
+
+lValue = rValue.xx;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.xx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec3 rValue;
+
+lValue = rValue.yy;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.yy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec3 rValue;
+
+lValue = rValue.zz;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.zz;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec3 rValue;
+
+lValue = rValue.rr;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.xx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec3 rValue;
+
+lValue = rValue.gg;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.yy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec3 rValue;
+
+lValue = rValue.bb;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.zz;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec3 rValue;
+
+lValue = rValue.ss;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.xx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec3 rValue;
+
+lValue = rValue.tt;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.yy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec3 rValue;
+
+lValue = rValue.pp;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.zz;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec4 rValue;
+
+lValue = rValue.xx;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.xx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec4 rValue;
+
+lValue = rValue.yy;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.yy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec4 rValue;
+
+lValue = rValue.zz;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.zz;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec4 rValue;
+
+lValue = rValue.ww;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.ww;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec4 rValue;
+
+lValue = rValue.rr;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.xx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec4 rValue;
+
+lValue = rValue.gg;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.yy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec4 rValue;
+
+lValue = rValue.bb;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.zz;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec4 rValue;
+
+lValue = rValue.aa;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.ww;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec4 rValue;
+
+lValue = rValue.ss;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.xx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec4 rValue;
+
+lValue = rValue.tt;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.yy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec4 rValue;
+
+lValue = rValue.pp;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.zz;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 lValue;
+vec4 rValue;
+
+lValue = rValue.qq;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.ww;
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="doubleLValues">
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec2 lValue;
+
+lValue.xy = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_1.xy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec2 lValue;
+
+lValue.yx = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_1.yx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec2 lValue;
+
+lValue.rg = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_1.xy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec2 lValue;
+
+lValue.gr = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_1.yx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec2 lValue;
+
+lValue.st = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_1.xy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec2 lValue;
+
+lValue.ts = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float2 var_1_1=0.0;
+
+var_1_1.yx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec3 lValue;
+
+lValue.xy = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.xy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec3 lValue;
+
+lValue.yx = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.yx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec3 lValue;
+
+lValue.zy = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.zy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec3 lValue;
+
+lValue.rg = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.xy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec3 lValue;
+
+lValue.gr = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.yx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec3 lValue;
+
+lValue.bg = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.zy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec3 lValue;
+
+lValue.st = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.xy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec3 lValue;
+
+lValue.ts = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.yx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec3 lValue;
+
+lValue.pt = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.zy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec4 lValue;
+
+lValue.xy = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.xy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec4 lValue;
+
+lValue.yx = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.yx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec4 lValue;
+
+lValue.zy = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.zy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec4 lValue;
+
+lValue.wz = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.wz = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec4 lValue;
+
+lValue.rg = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.xy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec4 lValue;
+
+lValue.gr = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.yx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec4 lValue;
+
+lValue.bg = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.zy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec4 lValue;
+
+lValue.ab = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.wz = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec4 lValue;
+
+lValue.st = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.xy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec4 lValue;
+
+lValue.ts = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.yx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec4 lValue;
+
+lValue.pt = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.zy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec2 rValue;
+vec4 lValue;
+
+lValue.qp = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float2 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.wz = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="tripleRValues">
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec3 rValue;
+
+lValue = rValue.xxx;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.xxx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec3 rValue;
+
+lValue = rValue.yyy;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.yyy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec3 rValue;
+
+lValue = rValue.zzz;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.zzz;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec3 rValue;
+
+lValue = rValue.rrr;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.xxx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec3 rValue;
+
+lValue = rValue.ggg;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.yyy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec3 rValue;
+
+lValue = rValue.bbb;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.zzz;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec3 rValue;
+
+lValue = rValue.sss;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.xxx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec3 rValue;
+
+lValue = rValue.ttt;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.yyy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec3 rValue;
+
+lValue = rValue.ppp;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_0 = var_1_1.zzz;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec4 rValue;
+
+lValue = rValue.xxx;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.xxx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec4 rValue;
+
+lValue = rValue.yyy;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.yyy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec4 rValue;
+
+lValue = rValue.zzz;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.zzz;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec4 rValue;
+
+lValue = rValue.rrr;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.xxx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec4 rValue;
+
+lValue = rValue.ggg;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.yyy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec4 rValue;
+
+lValue = rValue.bbb;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.zzz;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec4 rValue;
+
+lValue = rValue.sss;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.xxx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec4 rValue;
+
+lValue = rValue.ttt;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.yyy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 lValue;
+vec4 rValue;
+
+lValue = rValue.ppp;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.zzz;
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="tripleLValues">
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.xyz = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.xyz = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.yzx = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.yzx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.xyz = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.xyz = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.yzx = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.yzx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.xyz = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.xyz = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.yzx = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.yzx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.xyz = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.xyz = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.yzx = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.yzx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.zxy = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.zxy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.xyz = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.xyz = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.yzx = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.yzx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.zxy = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.zxy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.xyz = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.xyz = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.yzx = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.yzx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec3 lValue;
+
+lValue.zxy = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float3 var_1_1=0.0;
+
+var_1_1.zxy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec4 lValue;
+
+lValue.xyz = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.xyz = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec4 lValue;
+
+lValue.yzx = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.yzx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec4 lValue;
+
+lValue.zxy = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.zxy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec4 lValue;
+
+lValue.wzy = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.wzy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec4 lValue;
+
+lValue.xyz = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.xyz = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec4 lValue;
+
+lValue.yzx = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.yzx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec4 lValue;
+
+lValue.zxy = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.zxy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec4 lValue;
+
+lValue.wzy = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.wzy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec4 lValue;
+
+lValue.xyz = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.xyz = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec4 lValue;
+
+lValue.yzx = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.yzx = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec4 lValue;
+
+lValue.zxy = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.zxy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec3 rValue;
+vec4 lValue;
+
+lValue.wzy = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float3 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.wzy = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="quadRValues">
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.xxxx;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.xxxx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.yyyy;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.yyyy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.zzzz;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.zzzz;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.wwww;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.wwww;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.xyzw;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.xyzw;
+]]>
+      </Parameter>
+    </Row>
+
+    
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.rrrr;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.xxxx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.gggg;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.yyyy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.bbbb;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.zzzz;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.aaaa;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.wwww;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.rgba;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.xyzw;
+]]>
+      </Parameter>
+    </Row>
+    
+    
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.ssss;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.xxxx;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.tttt;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.yyyy;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.pppp;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.zzzz;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.qqqq;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.wwww;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 lValue;
+vec4 rValue;
+
+lValue = rValue.stpq;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_0 = var_1_1.xyzw;
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="quadLValues">
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 rValue;
+vec4 lValue;
+
+lValue.xyzw = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.xyzw = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 rValue;
+vec4 lValue;
+
+lValue.rgba = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.xyzw = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="GLSLVector">
+<![CDATA[
+vec4 rValue;
+vec4 lValue;
+
+lValue.stpq = rValue;
+]]>
+      </Parameter>
+     <Parameter Name="HLSLVector">
+<![CDATA[
+float4 var_1_0=0.0;
+float4 var_1_1=0.0;
+
+var_1_1.xyzw = var_1_0;
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="negativeValues">
+    <Row Description="Mismatch LValue types - float and vec2">
+      <Parameter Name="InvalidFragmentGLSL">
+<![CDATA[
+precision mediump float;
+void main(void)
+{
+  vec2 rValue;
+  float lValue;
+
+  lValue = rValue.xy;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+     <Parameter Name="InvalidVertexGLSL">
+<![CDATA[
+void main(void) 
+{
+  vec2 rValue;
+  float lValue;
+
+  lValue = rValue.xy;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Out of range field selector - vec2">
+      <Parameter Name="InvalidFragmentGLSL">
+<![CDATA[
+precision mediump float;
+void main(void)
+{
+  vec2 rValue;
+  vec3 lValue;
+
+  lValue = rValue.xyz;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+     <Parameter Name="InvalidVertexGLSL">
+<![CDATA[
+void main(void) 
+{
+  vec2 rValue;
+  vec3 lValue;
+
+  lValue = rValue.xyz;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Out of range field selector - vec3">
+      <Parameter Name="InvalidFragmentGLSL">
+<![CDATA[
+precision mediump float;
+void main(void)
+{
+  vec2 rValue;
+  vec4 lValue;
+
+  lValue = rValue.xyzw;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+     <Parameter Name="InvalidVertexGLSL">
+<![CDATA[
+void main(void) 
+{
+  vec2 rValue;
+  vec4 lValue;
+
+  lValue = rValue.xyzw;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Type mismatch assignment - vec2">
+      <Parameter Name="InvalidFragmentGLSL">
+<![CDATA[
+precision mediump float;
+void main(void)
+{
+  vec2 rValue;
+  vec2 lValue;
+
+  lValue.x = rValue.xy;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+     <Parameter Name="InvalidVertexGLSL">
+<![CDATA[
+void main(void) 
+{
+  vec2 rValue;
+  vec4 lValue;
+
+  lValue.x = rValue.xy;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Type mismatch assignment - vec3">
+      <Parameter Name="InvalidFragmentGLSL">
+<![CDATA[
+precision mediump float;
+void main(void)
+{
+  vec2 rValue;
+  vec3 lValue;
+
+  lValue.xyz = rValue.xy;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+     <Parameter Name="InvalidVertexGLSL">
+<![CDATA[
+void main(void) 
+{
+  vec2 rValue;
+  vec3 lValue;
+
+  lValue = rValue.xy;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Type mismatch assignment - vec4">
+      <Parameter Name="InvalidFragmentGLSL">
+<![CDATA[
+precision mediump float;
+void main(void)
+{
+  vec2 rValue;
+  vec4 lValue;
+
+  lValue.xyzw = rValue.xy;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+     <Parameter Name="InvalidVertexGLSL">
+<![CDATA[
+void main(void) 
+{
+  vec2 rValue;
+  vec4 lValue;
+
+  lValue.xyzw = rValue.xy;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+</Data>

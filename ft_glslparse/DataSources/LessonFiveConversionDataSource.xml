@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="LessonFiveTable">
+    <Row>
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+varying vec2 vTextureCoord;
+
+uniform sampler2D uSampler;
+
+void main(void) {
+    gl_FragColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+    float4 position : SV_Position;
+    float2 var_0_0:var_0_0;
+};
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+attribute vec3 aVertexPosition;
+attribute vec2 aTextureCoord;
+
+uniform mat4 uMVMatrix;
+uniform mat4 uPMatrix;
+
+varying vec2 vTextureCoord;
+
+void main(void) {
+    gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+    vTextureCoord = aTextureCoord;
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+    float3 var_0_0:var_0_0;
+    float2 var_0_1:var_0_1;
+};
+
+struct PSInput
+{
+    float4 position : SV_Position;
+};
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+</Data>

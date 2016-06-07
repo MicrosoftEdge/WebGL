@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="BasicUniformTable">
+    <Row>
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform %s foo;
+
+void main()
+{
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+%s var_0_0;
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+uniform %s foo[5];
+
+void main()
+{
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+%s var_0_0[5];
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform %s foo[5];
+void main()
+{
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+%s var_0_0[5];
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+uniform %s foo[5];
+
+void main()
+{
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+%s var_0_0[5];
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+</Data>

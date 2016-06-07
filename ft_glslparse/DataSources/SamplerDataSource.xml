@@ -1,0 +1,977 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="Programs">
+    <Row Description="Sampler as a uniform variable">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D sampler;
+
+void main() 
+{
+  gl_FragColor = texture2D(sampler, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Sampler as a function parameter (blocked by WinBlue 111722)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+
+uniform sampler2D uSampler;
+
+void foo(sampler2D sampler)
+{
+}
+
+void main() 
+{
+  foo(uSampler);
+  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="InvalidPrograms">
+    <Row Description="Samplers cannot be used as out parameters">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D uSampler;
+
+void foo(out sampler2D sampler)
+{
+}
+
+void main() 
+{
+  foo(uSampler);
+  gl_FragColor = texture2D(uSampler, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+uniform sampler2D uSampler;
+
+void foo(out sampler2D sampler)
+{
+}
+
+void main()
+{
+  foo(uSampler);
+  gl_Position = texture2D(uSampler, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Samplers cannot be used as inout parameters">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D uSampler;
+
+void foo(inout sampler2D sampler)
+{
+}
+
+void main() 
+{
+  foo(uSampler);
+  gl_FragColor = texture2D(uSampler, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+uniform sampler2D uSampler;
+
+void foo(inout sampler2D sampler)
+{
+}
+
+void main()
+{
+  foo(uSampler);
+  gl_Position = texture2D(uSampler, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Samplers cannot be varying">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+varying sampler2D vSampler;
+
+void main() 
+{
+  gl_FragColor = texture2D(vSampler, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+varying sampler2D vSampler;
+
+void main()
+{
+  gl_Position = texture2D(vSampler, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Samplers cannot be attributes">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+attribute sampler2D aSampler;
+
+void main() 
+{
+  gl_FragColor = texture2D(aSampler, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+attribute sampler2D aSampler;
+
+void main()
+{
+  gl_Position = texture2D(aSampler, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="Identifiers">
+    <Row Description="Sampler identifiers can contain all lowercase characters">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D sampler;
+
+void main() 
+{
+  gl_FragColor = texture2D(sampler, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Sampler identifiers can contain all uppercase characters">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D SAMPLER;
+
+void main() 
+{
+  gl_FragColor = texture2D(SAMPLER, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Sampler identifiers can contain underscore characters">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D sampler_;
+
+void main() 
+{
+  gl_FragColor = texture2D(sampler_, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Sampler identifiers can consist of a single lowercase character">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D a;
+
+void main() 
+{
+  gl_FragColor = texture2D(a, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Sampler identifiers can consist of a single uppercase character">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D A;
+
+void main() 
+{
+  gl_FragColor = texture2D(A, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+   <Row Description="Sampler identifiers can consist of a single underscore">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D _;
+
+void main() 
+{
+  gl_FragColor = texture2D(_, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Sampler identifiers can consist of an underscore and number">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D _0;
+
+void main() 
+{
+  gl_FragColor = texture2D(_0, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Sampler identifiers can consist of an uppercase letter, lowercase letter, underscore, and number">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D Fo_0;
+
+void main() 
+{
+  gl_FragColor = texture2D(Fo_0, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Sampler identifiers can be 16 characters long">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D foo0123456789012;
+
+void main() 
+{
+  gl_FragColor = texture2D(foo0123456789012, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Sampler identifiers can be 32 characters long">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D foo01234567890123456789012345678;
+
+void main() 
+{
+  gl_FragColor = texture2D(foo01234567890123456789012345678, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Sampler identifiers can be 64 characters long">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D foo01234567890123456789012345678foo01234567890123456789012345678;
+
+void main() 
+{
+  gl_FragColor = texture2D(foo01234567890123456789012345678foo01234567890123456789012345678, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+ 
+
+
+    <Row Description="Sampler identifiers can be 128 characters long" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678;
+
+void main() 
+{
+  gl_FragColor = texture2D(foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Sampler identifiers can be 256 characters long">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform sampler2D foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678;
+
+void main() 
+{
+  gl_FragColor = texture2D(foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678, vec2(0.0, 0.0));
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+SamplerState sampler_0:register(s[0]);
+Texture2D<float4> texture_0:register(t[0]);
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=GLSLtexture2D(sampler_0,texture_0,float2(0.000000e+000,0.000000e+000));
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  flippedPosition=float4(0.000000e+000, 0.000000e+000, 0.000000e+000, 0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+</Data>

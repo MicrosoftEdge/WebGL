@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="TypeTable">
+    <Row Description="Type of supported variable types">
+      <Parameter Name="Type">int</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="Type">float</Parameter>
+    </Row>
+  </Table>
+</Data>

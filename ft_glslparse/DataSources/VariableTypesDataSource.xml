@@ -1,0 +1,997 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="TypeTable">
+    <Row Description="Type of supported variable types">
+      <Parameter Name="TypeGLSL">int</Parameter>
+      <Parameter Name="TypeHLSL">int</Parameter>
+      <Parameter Name="InitializerGLSL">1</Parameter>
+      <Parameter Name="InitializerHLSL">1</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">float</Parameter>
+      <Parameter Name="TypeHLSL">float</Parameter>
+      <Parameter Name="InitializerGLSL">1.000000e+000</Parameter>
+      <Parameter Name="InitializerHLSL">1.000000e+000</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">vec2</Parameter>
+      <Parameter Name="TypeHLSL">float2</Parameter>
+      <Parameter Name="InitializerGLSL">vec2(1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float2(1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">vec3</Parameter>
+      <Parameter Name="TypeHLSL">float3</Parameter>
+      <Parameter Name="InitializerGLSL">vec3(1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float3(1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">vec4</Parameter>
+      <Parameter Name="TypeHLSL">float4</Parameter>
+      <Parameter Name="InitializerGLSL">vec4(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float4(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">mat2</Parameter>
+      <Parameter Name="TypeHLSL">float2x2</Parameter>
+      <Parameter Name="InitializerGLSL">mat2(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float2x2(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">mat3</Parameter>
+      <Parameter Name="TypeHLSL">float3x3</Parameter>
+      <Parameter Name="InitializerGLSL">mat3(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float3x3(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">mat4</Parameter>
+      <Parameter Name="TypeHLSL">float4x4</Parameter>
+      <Parameter Name="InitializerGLSL">mat4(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float4x4(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+  </Table>
+  <Table Id="TypeTableNoInt">
+    <Row Description="Type of supported variable types">
+      <Parameter Name="TypeGLSL">float</Parameter>
+      <Parameter Name="TypeHLSL">float</Parameter>
+      <Parameter Name="InitializerGLSL">1.000000e+000</Parameter>
+      <Parameter Name="InitializerHLSL">1.000000e+000</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">vec2</Parameter>
+      <Parameter Name="TypeHLSL">float2</Parameter>
+      <Parameter Name="InitializerGLSL">vec2(1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float2(1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">vec3</Parameter>
+      <Parameter Name="TypeHLSL">float3</Parameter>
+      <Parameter Name="InitializerGLSL">vec3(1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float3(1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">vec4</Parameter>
+      <Parameter Name="TypeHLSL">float4</Parameter>
+      <Parameter Name="InitializerGLSL">vec4(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float4(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">mat2</Parameter>
+      <Parameter Name="TypeHLSL">float2x2</Parameter>
+      <Parameter Name="InitializerGLSL">mat2(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float2x2(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">mat3</Parameter>
+      <Parameter Name="TypeHLSL">float3x3</Parameter>
+      <Parameter Name="InitializerGLSL">mat3(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float3x3(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="TypeGLSL">mat4</Parameter>
+      <Parameter Name="TypeHLSL">float4x4</Parameter>
+      <Parameter Name="InitializerGLSL">mat4(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+      <Parameter Name="InitializerHLSL">float4x4(1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000, 1.000000e+000)</Parameter>
+    </Row>
+  </Table>
+  <Table Id="InitializerTable">
+    <Row Description="Array with integer literal dimension">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %a foo[5];
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %a var_1_0[5];
+  psOutput.fragColor[0]=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %a foo[5];
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %a var_1_0[5];
+  flippedPosition=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Two integer literal addition (array initalizer)">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main() 
+{
+  int result[1 + 1];
+  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+float4 position : SV_Position;
+};
+struct PSOutput
+{
+float4 fragColor[1] : SV_Target;
+};
+void main(in PSInput psInputArg,out PSOutput psOutputOut)
+{
+  int var_1_0[2];
+  psOutput.fragColor[0]=float4(0.000000e+000,0.000000e+000,0.000000e+000,0.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  int result[1 + 1];
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+struct VSInput
+{
+};
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  int var_1_0[2];
+  flippedPosition=float4(0.000000e+000,0.000000e+000,0.000000e+000,0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Two integer literal subtraction (array initalizer)">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main() 
+{
+  int result[2 - 1];
+  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+float4 position : SV_Position;
+};
+struct PSOutput
+{
+float4 fragColor[1] : SV_Target;
+};
+void main(in PSInput psInputArg,out PSOutput psOutputOut)
+{
+  int var_1_0[1];
+  psOutput.fragColor[0]=float4(0.000000e+000,0.000000e+000,0.000000e+000,0.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  int result[2 - 1];
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+struct VSInput
+{
+};
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  int var_1_0[1];
+  flippedPosition=float4(0.000000e+000,0.000000e+000,0.000000e+000,0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Two integer literal multiplication (array initalizer)">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main() 
+{
+  int result[1 * 1];
+  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+float4 position : SV_Position;
+};
+struct PSOutput
+{
+float4 fragColor[1] : SV_Target;
+};
+void main(in PSInput psInputArg,out PSOutput psOutputOut)
+{
+  int var_1_0[1];
+  psOutput.fragColor[0]=float4(0.000000e+000,0.000000e+000,0.000000e+000,0.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  int result[1 * 1];
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+struct VSInput
+{
+};
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  int var_1_0[1];
+  flippedPosition=float4(0.000000e+000,0.000000e+000,0.000000e+000,0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    
+    <Row Description="Array with constant integer dimension" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  const int foo = 5;
+  %a bar[foo];
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  const int var_1_0 = 5;
+  %a var_1_1[var_1_0];
+  psOutput.fragColor[0]=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  const int foo = 5;
+  %a bar[foo];
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  const int var_1_0 = 5;
+  %a var_1_1[var_1_0];
+  flippedPosition=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Constant and integer literal addition (array initalizer)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main() 
+{
+  const int foo = 1;
+  int result[foo + 1];
+  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+float4 position : SV_Position;
+};
+struct PSOutput
+{
+float4 fragColor[1] : SV_Target;
+};
+void main(in PSInput psInputArg,out PSOutput psOutputOut)
+{
+  int var_1_0[2];
+  psOutput.fragColor[0]=float4(0.000000e+000,0.000000e+000,0.000000e+000,0.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  const int foo = 1;
+  int result[foo + 1];
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+struct VSInput
+{
+};
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  int var_1_0[2];
+  flippedPosition=float4(0.000000e+000,0.000000e+000,0.000000e+000,0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Constant and integer literal subtraction (array initalizer)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main() 
+{
+  const int foo = 2;
+  int result[foo - 1];
+  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+float4 position : SV_Position;
+};
+struct PSOutput
+{
+float4 fragColor[1] : SV_Target;
+};
+void main(in PSInput psInputArg,out PSOutput psOutputOut)
+{
+  int var_1_0[1];
+  psOutput.fragColor[0]=float4(0.000000e+000,0.000000e+000,0.000000e+000,0.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  const int foo = 2;
+  int result[foo - 1];
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+struct VSInput
+{
+};
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  int var_1_0[1];
+  flippedPosition=float4(0.000000e+000,0.000000e+000,0.000000e+000,0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Constant and integer literal multiplication (array initalizer)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main() 
+{
+  const int foo = 1;
+  int result[foo * 1];
+  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+float4 position : SV_Position;
+};
+struct PSOutput
+{
+float4 fragColor[1] : SV_Target;
+};
+void main(in PSInput psInputArg,out PSOutput psOutputOut)
+{
+  int var_1_0[1];
+  psOutput.fragColor[0]=float4(0.000000e+000,0.000000e+000,0.000000e+000,0.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  const int foo = 1;
+  int result[foo * 1];
+  gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+struct VSInput
+{
+};
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+  int var_1_0[1];
+  flippedPosition=float4(0.000000e+000,0.000000e+000,0.000000e+000,0.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Basic initializers">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %a foo = %b;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %a var_1_0 = %b;
+  psOutput.fragColor[0]=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %a foo = %b;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %a var_1_0 = %b;
+  flippedPosition=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Basic initializers (array)">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %a array[5];
+  %a foo = array[0];
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %a var_1_0[5];
+  %a var_1_1 = var_1_0[0];
+  psOutput.fragColor[0]=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %a array[5];
+  %a foo = array[0];
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %a var_1_0[5];
+  %a var_1_1 = var_1_0[0];
+  flippedPosition=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Varying rvalue">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+varying %a foo;
+void main()
+{
+  %a bar = foo;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+  %a vary_0:vary_0_sem;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %a var_1_1 = psInput.vary_0;
+  psOutput.fragColor[0]=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+varying %a foo;
+void main()
+{
+  %a bar = foo;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+  %a vary_0:vary_0_sem;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %a var_1_1 = psInput.vary_0;
+  flippedPosition=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Varying rvalue (array)">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+varying %a foo[5];
+void main()
+{
+  %a bar = foo[0];
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+  %a vary_0[5]:vary_0_sem;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %a var_1_1 = psInput.vary_0[0];
+  psOutput.fragColor[0]=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+varying %a foo[5];
+void main()
+{
+  %a bar = foo[0];
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+  %a vary_0[5]:vary_0_sem;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %a var_1_1 = psInput.vary_0[0];
+  flippedPosition=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Uniform rvalue">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform %a foo;
+void main()
+{
+  %a bar = foo;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+%a var_0_0;
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %a var_1_1 = var_0_0;
+  psOutput.fragColor[0]=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+uniform %a foo;
+void main()
+{
+  %a bar = foo;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+%a var_0_0;
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %a var_1_1 = var_0_0;
+  flippedPosition=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Uniform rvalue (array)">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform %a foo[5];
+void main()
+{
+  %a bar = foo[0];
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+%a var_0_0[5];
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %a var_1_1 = var_0_0[0];
+  psOutput.fragColor[0]=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+uniform %a foo[5];
+void main()
+{
+  %a bar = foo[0];
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+%a var_0_0[5];
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %a var_1_1 = var_0_0[0];
+  flippedPosition=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="ScopingTable">
+    <Row>
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+%a foo;
+void main()
+{
+  %a foo = %b;
+  
+  bool bar;
+  if(bar)
+  {
+    %a foo = %b;
+    
+      if(bar)
+      {
+        %a foo = %b;
+      }
+  }
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+%a var_0_0;
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %a var_3_0 = %b;
+  bool var_3_1=false;
+  if(var_3_1){
+    %a var_2_0=%b;
+    if(var_3_1){
+      %a var_1_0=%b;
+    }
+  }
+  psOutput.fragColor[0]=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%a foo;
+void main()
+{
+  %a foo = %b;
+  
+  bool bar;
+  if(bar)
+  {
+    %a foo = %b;
+    
+      if(bar)
+      {
+        %a foo = %b;
+      }
+  }
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+%a var_0_0;
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %a var_3_0 = %b;
+  bool var_3_1=false;
+  if(var_3_1){
+    %a var_2_0=%b;
+    if(var_3_1){
+      %a var_1_0=%b;
+    }
+  }
+  flippedPosition=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+</Data>

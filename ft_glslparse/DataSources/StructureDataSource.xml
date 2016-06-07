@@ -1,0 +1,1300 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="validConditionalStatements">
+    <Row Description="Boolean variable, no else">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  bool foo;
+  if(foo)
+  {
+    int foo2 = 3;
+  }
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  bool var_2_0=false;
+  if(var_2_0) {
+  int var_1_1 = 3;
+  }
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  bool foo;
+  if(foo)
+  {
+    int foo2 = 3;
+  }
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  bool var_2_0=false;
+  if(var_2_0) {
+  int var_1_1 = 3;
+  }
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Boolean variable, with else">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  bool foo;
+  if(foo)
+  {
+    int foo2 = 2;
+  }
+  else
+  {
+    int foo3 = 3;
+  }
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+bool var_3_0=false;
+if(var_3_0){
+int var_1_1=2;
+}
+else
+{
+int var_2_2=3;
+}
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  bool foo;
+  if(foo)
+  {
+    int foo2 = 2;
+  }
+  else
+  {
+    int foo3 = 3;
+  }
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+bool var_3_0=false;
+if(var_3_0){
+int var_1_1=2;
+}
+else
+{
+int var_2_2=3;
+}
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Nested boolean variable with else">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  bool foo;
+  if(foo)
+  {
+    int foo2 = 2;
+    if(foo)
+    {
+      int foo3 = 3;
+    }
+    else
+    {
+      int foo4 = 4;
+    }
+  }
+  else
+  {
+    int foo5 = 5;
+  }
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+bool var_5_0=false;
+if(var_5_0){
+int var_3_1=2;
+if(var_5_0){
+int var_1_2=3;
+}
+else
+{
+int var_2_3=4;
+}
+}
+else
+{
+int var_4_4=5;
+}
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  bool foo;
+  if(foo)
+  {
+    int foo2 = 2;
+    if(foo)
+    {
+      int foo3 = 3;
+    }
+    else
+    {
+      int foo4 = 4;
+    }
+  }
+  else
+  {
+    int foo5 = 5;
+  }
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+bool var_5_0=false;
+if(var_5_0){
+int var_3_1=2;
+if(var_5_0){
+int var_1_2=3;
+}
+else
+{
+int var_2_3=4;
+}
+}
+else
+{
+int var_4_4=5;
+}
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Chained boolean variable with else">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  bool foo, bar;
+  if(foo)
+  {
+    int foo2 = 2;
+  }
+  else if(bar)
+  {
+    int foo3 = 3;
+  }
+  else
+  {
+    int foo4 = 4;
+  }
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+bool var_5_0=false,var_5_1=false;
+if(var_5_0){
+int var_1_2=2;
+}
+else
+{
+if(var_5_1){
+int var_2_3=3;
+}
+else
+{
+int var_3_4=4;
+}
+}
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  bool foo, bar;
+  if(foo)
+  {
+    int foo2 = 2;
+  }
+  else if(bar)
+  {
+    int foo3 = 3;
+  }
+  else
+  {
+    int foo4 = 4;
+  }
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+bool var_5_0=false,var_5_1=false;
+if(var_5_0){
+int var_1_2=2;
+}
+else
+{
+if(var_5_1){
+int var_2_3=3;
+}
+else
+{
+int var_3_4=4;
+}
+}
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Boolean literal, no else">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  if(true)
+  {
+    int foo2 = 3;
+  }
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  if(true) {
+  int var_1_0 = 3;
+  }
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  if(true)
+  {
+    int foo2 = 3;
+  }
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  if(true) {
+  int var_1_0 = 3;
+  }
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Boolean literal, with else">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  if(true)
+  {
+    int foo2 = 2;
+  }
+  else
+  {
+    int foo3 = 3;
+  }
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+if(true){
+int var_1_0=2;
+}
+else
+{
+int var_2_1=3;
+}
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  if(true)
+  {
+    int foo2 = 2;
+  }
+  else
+  {
+    int foo3 = 3;
+  }
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+if(true){
+int var_1_0=2;
+}
+else
+{
+int var_2_1=3;
+}
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Nested boolean literal with else">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  if(true)
+  {
+    int foo2 = 2;
+    if(true)
+    {
+      int foo3 = 3;
+    }
+    else
+    {
+      int foo4 = 4;
+    }
+  }
+  else
+  {
+    int foo5 = 5;
+  }
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+if(true){
+int var_3_0=2;
+if(true){
+int var_1_1=3;
+}
+else
+{
+int var_2_2=4;
+}
+}
+else
+{
+int var_4_3=5;
+}
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  if(true)
+  {
+    int foo2 = 2;
+    if(true)
+    {
+      int foo3 = 3;
+    }
+    else
+    {
+      int foo4 = 4;
+    }
+  }
+  else
+  {
+    int foo5 = 5;
+  }
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+if(true){
+int var_3_0=2;
+if(true){
+int var_1_1=3;
+}
+else
+{
+int var_2_2=4;
+}
+}
+else
+{
+int var_4_3=5;
+}
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Chained boolean literal with else">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  if(true)
+  {
+    int foo2 = 2;
+  }
+  else if(true)
+  {
+    int foo3 = 3;
+  }
+  else
+  {
+    int foo4 = 4;
+  }
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+if(true){
+int var_1_0=2;
+}
+else
+{
+if(true){
+int var_2_1=3;
+}
+else
+{
+int var_3_2=4;
+}
+}
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  if(true)
+  {
+    int foo2 = 2;
+  }
+  else if(true)
+  {
+    int foo3 = 3;
+  }
+  else
+  {
+    int foo4 = 4;
+  }
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+if(true){
+int var_1_0=2;
+}
+else
+{
+if(true){
+int var_2_1=3;
+}
+else
+{
+int var_3_2=4;
+}
+}
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+
+    
+    <Row Description="Boolean expression, no else">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  int foo1, foo2;
+  if(foo1 == foo2)
+  {
+    int foo3 = 3;
+  }
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+int var_2_0=0,var_2_1=0;
+if(var_2_0==var_2_1){
+int var_1_2=3;
+}
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  int foo1, foo2;
+  if(foo1 == foo2)
+  {
+    int foo3 = 3;
+  }
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+int var_2_0=0,var_2_1=0;
+if(var_2_0==var_2_1){
+int var_1_2=3;
+}
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Boolean expression, with else">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  int foo1, foo2;
+  if(foo1 == foo2)
+  {
+    int foo3 = 3;
+  }
+  else
+  {
+    int foo4 = 4;
+  }
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+int var_3_0=0,var_3_1=0;
+if(var_3_0==var_3_1){
+int var_1_2=3;
+}
+else
+{
+int var_2_3=4;
+}
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  int foo1, foo2;
+  if(foo1 == foo2)
+  {
+    int foo3 = 3;
+  }
+  else
+  {
+    int foo4 = 4;
+  }
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+int var_3_0=0,var_3_1=0;
+if(var_3_0==var_3_1){
+int var_1_2=3;
+}
+else
+{
+int var_2_3=4;
+}
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Nested boolean expression with else">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  int foo1, foo2;
+  if(foo1 == foo2)
+  {
+    int foo3 = 3;
+    if(foo1 == foo2)
+    {
+      int foo4 = 4;
+    }
+    else
+    {
+      int foo5 = 5;
+    }
+  }
+  else
+  {
+    int foo5 = 5;
+  }
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+float4 position : SV_Position;
+};
+struct PSOutput
+{
+float4 fragColor[1] : SV_Target;
+};
+void main(in PSInput psInputArg,out PSOutput psOutputOut)
+{
+int var_5_0=0,var_5_1=0;
+if(var_5_0==var_5_1){
+int var_3_2=3;
+if(var_5_0==var_5_1){
+int var_1_3=4;
+}
+else
+{
+int var_2_4=5;
+}
+}
+else
+{
+int var_4_4=5;
+}
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  int foo1, foo2;
+  if(foo1 == foo2)
+  {
+    int foo3 = 3;
+    if(foo1 == foo2)
+    {
+      int foo4 = 4;
+    }
+    else
+    {
+      int foo5 = 5;
+    }
+  }
+  else
+  {
+    int foo6 = 6;
+  }
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+float4 position : SV_Position;
+};
+struct VSInput
+{
+};
+void main(in VSInput vsInputArg,out PSInput psInputOut)
+{
+int var_5_0=0,var_5_1=0;
+if(var_5_0==var_5_1){
+int var_3_2=3;
+if(var_5_0==var_5_1){
+int var_1_3=4;
+}
+else
+{
+int var_2_4=5;
+}
+}
+else
+{
+int var_4_5=6;
+}
+flippedPosition=float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Chained boolean expression with else">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  int foo1, foo2, foo3;
+  if(foo1 == foo2)
+  {
+    int foo4 = 4;
+  }
+  else if(foo2 == foo3)
+  {
+    int foo5 = 5;
+  }
+  else
+  {
+    int foo6 = 6;
+  }
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+int var_5_0=0,var_5_1=0,var_5_2=0;
+if(var_5_0==var_5_1){
+int var_1_3=4;
+}
+else
+{
+if(var_5_1==var_5_2){
+int var_2_4=5;
+}
+else
+{
+int var_3_5=6;
+}
+}
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  int foo1, foo2, foo3;
+  if(foo1 == foo2)
+  {
+    int foo4 = 4;
+  }
+  else if(foo2 == foo3)
+  {
+    int foo5 = 5;
+  }
+  else
+  {
+    int foo6 = 6;
+  }
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+int var_5_0=0,var_5_1=0,var_5_2=0;
+if(var_5_0==var_5_1){
+int var_1_3=4;
+}
+else
+{
+if(var_5_1==var_5_2){
+int var_2_4=5;
+}
+else
+{
+int var_3_5=6;
+}
+}
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="invalidConditionalStatements">
+    <Row Description="Condtional type cannot be vec2" Ignore="true">
+      <Parameter Name="InvalidFragmentGLSL">
+<![CDATA[
+precision mediump float;
+void main(void)
+{
+  vec2 conditional;
+  
+  if(conditional)
+  {
+    int foo = 1;
+  }
+  
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+     <Parameter Name="InvalidVertexGLSL">
+<![CDATA[
+void main(void) 
+{
+  vec2 conditional;
+  
+  if(conditional)
+  {
+    int foo = 1;
+  }
+
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Condtional type cannot be vec3" Ignore="true">
+      <Parameter Name="InvalidFragmentGLSL">
+<![CDATA[
+precision mediump float;
+void main(void)
+{
+  vec3 conditional;
+  
+  if(conditional)
+  {
+    int foo = 1;
+  }
+  
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+     <Parameter Name="InvalidVertexGLSL">
+<![CDATA[
+void main(void) 
+{
+  vec3 conditional;
+  
+  if(conditional)
+  {
+    int foo = 1;
+  }
+
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Condtional type cannot be vec4" Ignore="true">
+      <Parameter Name="InvalidFragmentGLSL">
+<![CDATA[
+precision mediump float;
+void main(void)
+{
+  vec4 conditional;
+  
+  if(conditional)
+  {
+    int foo = 1;
+  }
+  
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+     <Parameter Name="InvalidVertexGLSL">
+<![CDATA[
+void main(void) 
+{
+  vec4 conditional;
+  
+  if(conditional)
+  {
+    int foo = 1;
+  }
+
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Condtional type cannot be int" Ignore="true">
+      <Parameter Name="InvalidFragmentGLSL">
+<![CDATA[
+precision mediump float;
+void main(void)
+{
+  int conditional;
+  
+  if(conditional)
+  {
+    int foo = 1;
+  }
+  
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+     <Parameter Name="InvalidVertexGLSL">
+<![CDATA[
+void main(void) 
+{
+  int conditional;
+  
+  if(conditional)
+  {
+    int foo = 1;
+  }
+
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Condtional type cannot be float" Ignore="true">
+      <Parameter Name="InvalidFragmentGLSL">
+<![CDATA[
+precision mediump float;
+void main(void)
+{
+  float conditional;
+  
+  if(conditional)
+  {
+    int foo = 1;
+  }
+  
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+     <Parameter Name="InvalidVertexGLSL">
+<![CDATA[
+void main(void) 
+{
+  float conditional;
+  
+  if(conditional)
+  {
+    int foo = 1;
+  }
+
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+</Data>

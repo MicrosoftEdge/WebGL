@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="BasicAttributeTable">
+    <Row Description="Basic structure of a GLSL program with an 'attribute' variable.">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+attribute %s foo;
+
+void main()
+{
+  foo;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+  %s attr_0:attr_0_sem;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  vsInput.attr_0;
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+</Data>

@@ -1,0 +1,746 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="Scenarios">
+    <Row Description="Variables can contain all lowercase characters">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %s foo;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %s var_1_0;
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %s foo;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %s var_1_0;
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Variables can contain all uppercase characters">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %s FOO;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %s var_1_0;
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %s FOO;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %s var_1_0;
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Variables can contain underscore characters">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %s foo_;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %s var_1_0;
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %s foo_;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %s var_1_0;
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Variables can consist of a single lowercase character">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %s f;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %s var_1_0;
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %s f;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %s var_1_0;
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Variables can consist of a single uppercase character">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %s F;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %s var_1_0;
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %s F;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %s var_1_0;
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Variables can consist of a single underscore">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %s _;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %s var_1_0;
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %s _;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %s var_1_0;
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Variables can consist of an underscore and number">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %s _0;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %s var_1_0;
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %s _0;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %s var_1_0;
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Variables can consist of an uppercase letter, lowercase letter, underscore, and number">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %s Fo_0;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %s var_1_0;
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %s Fo_0;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %s var_1_0;
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Variables can be 16 characters long" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %s foo0123456789012;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %s var_1_0;
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %s foo0123456789012;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %s var_1_0;
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Variables can be 32 characters long" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %s foo01234567890123456789012345678;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %s var_1_0;
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %s foo01234567890123456789012345678;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %s var_1_0;
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Variables can be 64 characters long" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %s foo01234567890123456789012345678foo01234567890123456789012345678;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %s var_1_0;
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %s foo01234567890123456789012345678foo01234567890123456789012345678;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %s var_1_0;
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Variables can be 128 characters long" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %s foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %s var_1_0;
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %s foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %s var_1_0;
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Variables can be 256 characters long" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  %s foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678;
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  %s var_1_0;
+  psOutput.fragColor[0] = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  %s foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678foo01234567890123456789012345678;
+  gl_Position = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct VSInput
+{
+};
+
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  %s var_1_0;
+  flippedPosition = float4(1.000000e+000,1.000000e+000,1.000000e+000,1.000000e+000);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+</Data>

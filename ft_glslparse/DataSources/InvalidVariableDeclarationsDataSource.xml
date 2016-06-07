@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="IdentifierScenarios">
+    <Row Description="Ensure that variable declarations need an identifier (ex. 'int;')" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+%s;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s;
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure that variable names cannot be the same as type names (ex. 'int int;')" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+%s %s;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s %s;
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure that variable names cannot be a keyword (attribute)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+%s attribute;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s attribute;
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure that variable names cannot be a keyword (in)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+%s in;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s in;
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure that variable names cannot be a keyword (out)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+%s out;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s out;
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure that variable names cannot be a keyword (inout)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+%s inout;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s inout;
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure that variable names cannot be a keyword (lowp)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+%s lowp;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s lowp;
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure that variable names cannot be a keyword (mediump)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+%s mediump;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s mediump;
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure that variable names cannot be a keyword (highp)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+%s highp;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s highp;
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Ensure that variable names cannot be a keyword (precision)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+%s precision;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+%s precision;
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="InvalidAttributeIdentifier">
+    <Row Description="'attribute' is only valid on the vertex shader" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+attribute %s foo;
+void main()
+{
+  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="MultipleStorageQualifiers">
+    <Row Description="Multiple storage qualifiers are invalid (attribute uniform)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+attribute uniform %s foo;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+attribute uniform %s foo;
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Multiple storage qualifiers are invalid (attribute varying)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+attribute varying %s foo;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+attribute varying %s foo;
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Multiple storage qualifiers are invalid (uniform attribute)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform attribute %s foo;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+uniform attribute %s foo;
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Multiple storage qualifiers are invalid (uniform varying)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+uniform varying %s foo;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+uniform varying %s foo;
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Multiple storage qualifiers are invalid (varying attribute)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+varying attribute %s foo;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+varying attribute %s foo;
+]]>
+      </Parameter>
+    </Row>
+    <Row Description="Multiple storage qualifiers are invalid (varying uniform)" Ignore="true">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+varying uniform %s foo;
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+varying uniform %s foo;
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+</Data>

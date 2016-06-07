@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<Data>
+  <Table Id="Programs">
+    <Row Description="BasicVec4Program">
+      <Parameter Name="FragmentGLSL">
+<![CDATA[
+void main()
+{
+  gl_FragColor = vec4(%s, %s, %s, %s);
+}
+]]>
+      </Parameter>
+      <Parameter Name="FragmentHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct PSOutput
+{
+  float4 fragColor[1] : SV_Target;
+};
+
+void main(in PSInput psInputArg, out PSOutput psOutputOut)
+{
+  psOutput.fragColor[0]=float4(%s,%s,%s,%s);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexGLSL">
+<![CDATA[
+void main()
+{
+  gl_Position = vec4(%s, %s, %s, %s);
+}
+]]>
+      </Parameter>
+      <Parameter Name="VertexHLSL">
+<![CDATA[
+struct PSInput
+{
+  float4 position : SV_Position;
+};
+
+struct VSInput
+{
+};
+
+void main(in VSInput vsInputArg, out PSInput psInputOut)
+{
+  flippedPosition=float4(%s, %s, %s, %s);
+}
+]]>
+      </Parameter>
+    </Row>
+  </Table>
+  <Table Id="ValidIntegerValues">
+    <Row>
+      <Parameter Name="IntValue">0</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="IntValue">1</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="IntValue">10</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="IntValue">100</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="IntValue">1000</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="IntValue">10000</Parameter>
+    </Row>    
+    <Row>
+      <Parameter Name="IntValue">1234567890</Parameter>
+    </Row>
+  </Table>
+  <Table Id="InvalidIntegerValues">
+    <Row>
+      <Parameter Name="IntValue">a</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="IntValue">#</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="IntValue">_</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="IntValue">A</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="IntValue">1f</Parameter>
+    </Row>
+  </Table>
+  <Table Id="ValidFloatValues">
+    <Row>
+      <Parameter Name="FloatValue">0.0</Parameter>
+      <Parameter Name="FloatValueOut">0.000000e+000</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="FloatValue">1.0</Parameter>
+      <Parameter Name="FloatValueOut">1.000000e+000</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="FloatValue">0.1</Parameter>
+      <Parameter Name="FloatValueOut">1.000000e-001</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="FloatValue">.1</Parameter>
+      <Parameter Name="FloatValueOut">1.000000e-001</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="FloatValue">0.1000009</Parameter>
+      <Parameter Name="FloatValueOut">1.000009e-001</Parameter>
+    </Row>
+    <Row>
+      <Parameter Name="FloatValue">10000</Parameter>
+      <Parameter Name="FloatValueout">10000</Parameter>
+    </Row>    
+  </Table>
+</Data>
