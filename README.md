@@ -16,3 +16,6 @@ Test suite for the transpiler
 ## How do I build this?
 At this time, we are publishing the source code for reference only. We do plan to provide project files and instructions to generate binaries down the line, 
 however we do not have a target date for it just yet. If you have specific questions or needs, please do reach out: we will be happy to evaluate your scenario and discuss how we can help.     
+
+## Code of Conduct
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
