@@ -51,10 +51,7 @@ public:
     // Destructor. Deletes the object.
     ~TSmartMemory() throw() 
     { 
-        if (m_pT) 
-        {   
-            delete m_pT;
-        }
+        delete m_pT;
     }
 
     // Casting to T*
@@ -72,10 +69,7 @@ public:
     // Assignment from non-smart pointer
     T* operator=(T* pT) throw() 
     { 
-        if (m_pT) 
-        {
-            delete m_pT;
-        }
+        delete m_pT;
         return m_pT = pT; 
     }
 
@@ -145,10 +139,7 @@ public:
         }
         else
         {
-            if (m_pT)
-            {
-                delete m_pT;
-            }
+            delete m_pT;
 
             // Transfer ownership
             m_pT = spT.Extract();
